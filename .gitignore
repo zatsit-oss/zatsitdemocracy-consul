@@ -40,3 +40,5 @@ tmp/
 # Test results
 /spec/examples.txt
 /coverage/
+.idea
+.tool-versions
