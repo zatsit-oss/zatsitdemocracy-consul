@@ -27,6 +27,7 @@ tmp/
 /public/machine_learning/data/
 /public/tenants/*/machine_learning/data/
 /node_modules/
+.idea/
 
 # Bundler config, cache and gemsets
 .bundle/
