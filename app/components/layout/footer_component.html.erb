@@ -23,7 +23,7 @@
 
   <div class="subfooter row">
     <div class="small-12 medium-8 column">
-      <%= t("layouts.footer.copyright", year: Time.current.year) %>
+      <%= t("layouts.footer.copyright", year: Time.current.year) %> (v<%= version %>)
       <%= render Layout::LegalLinksComponent.new %>
     </div>
 

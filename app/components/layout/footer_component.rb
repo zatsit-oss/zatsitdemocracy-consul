@@ -3,6 +3,17 @@ class Layout::FooterComponent < ApplicationComponent
     !Rails.application.multitenancy_management_mode?
   end
 
+  def version
+    publiccode_path = Rails.root.join('publiccode.yml')
+    if File.exist?(publiccode_path)
+      require 'yaml'
+      yaml = YAML.load_file(publiccode_path)
+      yaml['softwareVersion'] || 'unknown'
+    else
+      'unknown'
+    end
+  end
+
   private
 
     def open_source_link
