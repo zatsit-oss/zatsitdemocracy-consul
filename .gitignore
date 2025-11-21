@@ -41,3 +41,4 @@ tmp/
 /coverage/
 .idea
 .tool-versions
+.idea/*
