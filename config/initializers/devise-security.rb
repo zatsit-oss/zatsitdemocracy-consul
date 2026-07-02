@@ -3,7 +3,7 @@ Devise.setup do |config|
   # Configure security extension for devise
 
   # Should the password expire (e.g 3.months)
-  config.expire_password_after = 1.year
+  config.expire_password_after = 10.year
 
   # Need 1 char each of: A-Z, a-z, 0-9, and a punctuation mark or symbol
   # You may use "digits" in place of "digit" and "symbols" in place of
