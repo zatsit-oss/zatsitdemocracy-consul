@@ -7,7 +7,7 @@ services:
     image: postgres:14.19-trixie
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      - POSTGRES_PASSWORD=postgres
     # persist the database between containers by storing it in a volume
     volumes:
       - db_data:/var/lib/postgresql/data
@@ -28,7 +28,7 @@ services:
 
     # expose the port we configured Unicorn to bind to
     ports:
-      - "3000:3000"
+      - "3005:3000"
     # map our application source code, in full, to the application root of our container
     volumes:
       - .:/var/www/consul
@@ -36,9 +36,13 @@ services:
       - node_modules:/var/www/consul/node_modules
     environment:
       - DB_HOST=database # Same name as the database service
+      - INSTANCE_HOST=database
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASS=postgres
       - PGUSER=postgres
-      - PGPASSWORD=${PGPASSWORD-$POSTGRES_PASSWORD}
-      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      - PGPASSWORD=postgres
+      - POSTGRES_PASSWORD=postgres
 volumes:
   db_data: {}
   bundle: {}
